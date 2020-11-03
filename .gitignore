@@ -33,4 +33,7 @@
 
 # cmake build directories
 build/
-clang/
+make-gcc/
+make-clang/
+ninja-gcc/
+ninja-clang/

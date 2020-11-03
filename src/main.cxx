@@ -1,7 +1,13 @@
 #include <iostream>
 
+#include "env_check.h"
+
+using namespace Playground;
+
 int main() {
-  std::cout << "hello" << std::endl;
+  CheckCompiler();
+  CheckTargetSystem();
+
 }
 
 

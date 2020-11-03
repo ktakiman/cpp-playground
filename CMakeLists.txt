@@ -9,6 +9,7 @@ set(SOURCE_DIR "${PROJECT_SOURCE_DIR}/src")
 
 add_executable(cpp-playground 
   ${SOURCE_DIR}/main.cxx
+  ${SOURCE_DIR}/env_check.cxx
 )
 
 
