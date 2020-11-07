@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(SOURCE_DIR "${PROJECT_SOURCE_DIR}/src")
 
-add_executable(cpp-playground 
+add_executable(playground 
   ${SOURCE_DIR}/main.cxx
   ${SOURCE_DIR}/env_check.cxx
 )
