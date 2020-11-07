@@ -9,7 +9,7 @@ export CXX=/usr/bin/clang++
 echo "CC is set to: $CC"
 echo "CXX is set to: $CXX"
 
-rm ninja-clang -r
+rm -rf ninja-clang
 mkdir ninja-clang
 cd ninja-clang
 

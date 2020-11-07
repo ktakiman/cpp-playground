@@ -9,7 +9,7 @@ export CXX=/usr/bin/clang++
 echo "CC is set to: $CC"
 echo "CXX is set to: $CXX"
 
-rm make-clang -rf
+rm -rf make-clang 
 mkdir make-clang
 cd make-clang
 

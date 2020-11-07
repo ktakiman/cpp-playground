@@ -31,9 +31,6 @@
 *.out
 *.app
 
-# cmake build directories
-build/
-make-gcc/
-make-clang/
-ninja-gcc/
-ninja-clang/
+# ignore all subfolders except 'src'
+/*/  
+!src

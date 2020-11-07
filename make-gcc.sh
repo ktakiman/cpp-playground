@@ -3,7 +3,7 @@
 #set -x
 set -e
 
-rm make-gcc -r
+rm -rf make-gcc
 mkdir make-gcc
 cd make-gcc
 

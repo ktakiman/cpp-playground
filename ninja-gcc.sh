@@ -3,7 +3,7 @@
 #set -x
 set -e
 
-rm ninja-gcc -r
+rm -rf ninja-gcc
 mkdir ninja-gcc
 cd ninja-gcc
 
