@@ -34,3 +34,5 @@
 # ignore all subfolders except 'src'
 /*/  
 !src
+
+compile_commands.json
