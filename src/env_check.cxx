@@ -1,6 +1,7 @@
 #include "env_check.h"
 
 #include <iostream>
+#include <filesystem>
 
 namespace Playground {
 
@@ -48,6 +49,7 @@ void CheckTargetSystem() {
   std::cout << "_WIN64 = " << _WIN64 << std::endl;
 #endif
 
+  std::cout << "Temp dir = " << std::filesystem::temp_directory_path() << std::endl;
 }
 
 }
