@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
+#include <string>
 
 #include "env_check.h"
 #include "cpp17-stl-update.h"
