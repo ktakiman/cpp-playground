@@ -4,4 +4,8 @@ namespace Playground {
 
 void TestVariant();
 
+void TestOptional();
+
+void TestAny();
+
 }
