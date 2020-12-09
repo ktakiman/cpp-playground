@@ -124,10 +124,13 @@ void TestAny() {
   DumpMemory(std::cout, &s1, "std::string = 'foo bar'");
   DumpMemory(std::cout, &any_s1, "std::any<std::string> = 'foo bar'");
 
-  // peek into
+  // peek under the hood
+
+#ifndef _MSC_VER
   std::string* ps1 =
       *reinterpret_cast<std::string**>(reinterpret_cast<char*>(&any_s1) + 8);
   DumpMemory(std::cout, ps1, "dynamic allocated by std::any");
+#endif
 
   auto takeAny = [](std::any& any) {
     try {
