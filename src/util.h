@@ -37,5 +37,12 @@ void DumpMemory(std::ostream& os, const T* addr, const char* title = nullptr,
   os << std::endl;
 }
 
+struct Chatty {
+  // ref-qualifiers added in c++11
+  // https://akrzemi1.wordpress.com/2014/06/02/ref-qualifiers/
+  void TellLorR(const char* prefix) &;
+  void TellLorR(const char* prefix) &&;
+};
+
 }  // namespace Playground
 

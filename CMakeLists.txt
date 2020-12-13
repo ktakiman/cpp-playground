@@ -13,7 +13,9 @@ set(SOURCE_DIR "${PROJECT_SOURCE_DIR}/src")
 add_executable(playground 
   ${SOURCE_DIR}/main.cxx
   ${SOURCE_DIR}/env_check.cxx
+  ${SOURCE_DIR}/util.cxx
   ${SOURCE_DIR}/cpp17-stl-update.cxx
+  ${SOURCE_DIR}/forward-ref.cxx
 )
 
 

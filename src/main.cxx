@@ -1,18 +1,22 @@
 #include <fstream>
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 #include <map>
 #include <string>
 
 #include "cpp17-stl-update.h"
 #include "env_check.h"
+#include "forward-ref.h"
+#include "template-test.h"
 
 using namespace Playground;
 
 std::map<int, std::pair<const char*, void (*)()>> _tests = {
     {1, {"std::variant", TestVariant}},
     {2, {"std::optional", TestOptional}},
-    {3, {"std::any", TestAny}}};
+    {3, {"std::any", TestAny}},
+    {4, {"forward ref", TestForwardRef}},
+};
 
 int main(int argc, char* argv[]) {
   if (argc < 2) {
