@@ -16,6 +16,7 @@ add_executable(playground
   ${SOURCE_DIR}/util.cxx
   ${SOURCE_DIR}/cpp17-stl-update.cxx
   ${SOURCE_DIR}/forward-ref.cxx
+  ${SOURCE_DIR}/meta-programming.cxx
 )
 
 

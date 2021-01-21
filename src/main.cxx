@@ -8,6 +8,7 @@
 #include "env_check.h"
 #include "forward-ref.h"
 #include "template-test.h"
+#include "meta-programming.h"
 
 using namespace Playground;
 
@@ -16,6 +17,7 @@ std::map<int, std::pair<const char*, void (*)()>> _tests = {
     {2, {"std::optional", TestOptional}},
     {3, {"std::any", TestAny}},
     {4, {"forward ref", TestForwardRef}},
+    {5, {"meta-programming", TestMetaProgramming}},
 };
 
 int main(int argc, char* argv[]) {
