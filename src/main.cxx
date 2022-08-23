@@ -9,6 +9,7 @@
 #include "forward-ref.h"
 #include "template-test.h"
 #include "meta-programming.h"
+#include "format.h"
 
 using namespace Playground;
 
@@ -18,6 +19,7 @@ std::map<int, std::pair<const char*, void (*)()>> _tests = {
     {3, {"std::any", TestAny}},
     {4, {"forward ref", TestForwardRef}},
     {5, {"meta-programming", TestMetaProgramming}},
+    {6, {"format", TestFormat}},
 };
 
 int main(int argc, char* argv[]) {
