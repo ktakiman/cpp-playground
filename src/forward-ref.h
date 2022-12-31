@@ -2,6 +2,6 @@
 
 namespace Playground {
 
-void TestForwardRef() ;
+void TestForwardRef();
 
 }  // namespace Playground

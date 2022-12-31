@@ -5,4 +5,3 @@ namespace Playground {
 void TestNumericCast();
 
 };  // namespace Playground
-

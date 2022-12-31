@@ -6,11 +6,11 @@
 
 #include "cpp17-stl-update.h"
 #include "env_check.h"
-#include "forward-ref.h"
-#include "template-test.h"
-#include "meta-programming.h"
 #include "format.h"
+#include "forward-ref.h"
+#include "meta-programming.h"
 #include "numeric-cast.h"
+#include "template-test.h"
 
 using namespace Playground;
 
@@ -43,4 +43,3 @@ int main(int argc, char* argv[]) {
     }
   }
 }
-

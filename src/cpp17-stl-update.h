@@ -8,4 +8,4 @@ void TestOptional();
 
 void TestAny();
 
-}
+}  // namespace Playground

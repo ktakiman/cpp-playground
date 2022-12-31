@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include <string>
-#include <typeinfo>
 #include <type_traits>
+#include <typeinfo>
 
 // https://www.youtube.com/watch?v=Am2is2QCvxY
 
@@ -15,6 +15,7 @@ namespace Playground {
 template <unsigned int M, unsigned int N>
 struct gcd {
   static_assert(M != 0);
+  // does this need to be static type?
   constexpr static int value = gcd<N, M % N>::value;
 };
 
@@ -42,7 +43,8 @@ struct type_is {
 //------------------------------------------------------------------------------
 // remove const or volatile
 // can 'T" become 'const (type)'??????
-// std::remove_const, std::remove_volatile, std::remove_cv provides these metafunctions
+// std::remove_const, std::remove_volatile, std::remove_cv provides these
+// metafunctions
 //------------------------------------------------------------------------------
 template <typename T>
 struct remove_const : type_is<T> {};
@@ -52,7 +54,7 @@ template <typename T>
 struct remove_const<const T> : type_is<T> {};
 
 template <typename T>
-using  remove_const_t = typename remove_const<T>::type;
+using remove_const_t = typename remove_const<T>::type;
 
 template <typename T>
 struct remove_volatile : type_is<T> {};
@@ -63,7 +65,7 @@ struct remove_volatile<volatile T> : type_is<T> {};
 
 template <typename T>
 struct RemoveConstTest {
-  RemoveConstTest(T* p) : v(*p), ncv(*p)  {}
+  RemoveConstTest(T* p) : v(*p), ncv(*p) {}
   T v;
   remove_const_t<T> ncv;
 };
@@ -73,13 +75,14 @@ void TestRemoveConst() {
   int* p = &i;
 
   RemoveConstTest test1(p);
-  test1.v += 10;   // test.v is int so we can modify it
-  test1.ncv += 10; // test.ncv is int so we can modify it
+  test1.v += 10;    // test.v is int so we can modify it
+  test1.ncv += 10;  // test.ncv is int so we can modify it
 
   const int* cp = &i;
   RemoveConstTest test2(cp);
-  //test2.v += 10;   // test.v is const int so this would become an error if uncommented out
-  test2.ncv += 10; // test.ncv is int so we can modify it
+  // test2.v += 10;   // test.v is const int so this would become an error if
+  // uncommented out
+  test2.ncv += 10;  // test.ncv is int so we can modify it
 }
 
 //------------------------------------------------------------------------------
@@ -89,11 +92,13 @@ void TestRemoveConst() {
 template <bool, typename T, typename>
 struct conditional : type_is<T> {};
 
-template <typename T, typename U>     // 'bool' must not be included here, this is tricky...
+template <typename T,
+          typename U>  // 'bool' must not be included here, this is tricky...
 struct conditional<false, T, U> : type_is<U> {};
 
 //------------------------------------------------------------------------------
-// type A or nothing (this is what std::enable_if does, and a building block of SFINAE)
+// type A or nothing (this is what std::enable_if does, and a building block of
+// SFINAE)
 //------------------------------------------------------------------------------
 template <bool, typename T>
 struct enable_if : type_is<T> {};
@@ -104,19 +109,16 @@ struct enable_if<false, T> {};  // no ::type defined
 //------------------------------------------------------------------------------
 // integral constant
 //------------------------------------------------------------------------------
-template<typename T, T v>
+template <typename T, T v>
 struct integral_constant {
   static constexpr T value = v;
 };
 
 template <typename T>
-struct is_constant : integral_constant<bool, false> {
-};
+struct is_constant : integral_constant<bool, false> {};
 
 template <typename T>
-struct is_constant<const T> : integral_constant<bool, true> {
-};
-
+struct is_constant<const T> : integral_constant<bool, true> {};
 
 //------------------------------------------------------------------------------
 void TestMetaProgramming() {

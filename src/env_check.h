@@ -6,5 +6,4 @@ void CheckCompiler();
 
 void CheckTargetSystem();
 
-}
-
+}  // namespace Playground
