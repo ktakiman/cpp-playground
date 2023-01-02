@@ -10,6 +10,7 @@
 #include "forward-ref.h"
 #include "meta-programming.h"
 #include "numeric-cast.h"
+#include "pipe.h"
 #include "template-test.h"
 #include "type-traits.h"
 
@@ -24,6 +25,7 @@ std::map<int, std::pair<const char*, void (*)()>> _tests = {
     {6, {"format", TestFormat}},
     {7, {"numeric-cast", TestNumericCast}},
     {8, {"type-traits", TestTypeTraits}},
+    {9, {"pipe", TestPipe}},
 };
 
 int main(int argc, char* argv[]) {
