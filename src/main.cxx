@@ -11,6 +11,7 @@
 #include "meta-programming.h"
 #include "numeric-cast.h"
 #include "template-test.h"
+#include "type-traits.h"
 
 using namespace Playground;
 
@@ -22,6 +23,7 @@ std::map<int, std::pair<const char*, void (*)()>> _tests = {
     {5, {"meta-programming", TestMetaProgramming}},
     {6, {"format", TestFormat}},
     {7, {"numeric-cast", TestNumericCast}},
+    {8, {"type-traits", TestTypeTraits}},
 };
 
 int main(int argc, char* argv[]) {
